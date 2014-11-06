@@ -1,0 +1,9 @@
+.\objects\init.o: ..\Src\init.c
+.\objects\init.o: ..\Inc\init.h
+.\objects\init.o: ..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h
+.\objects\init.o: ..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h
+.\objects\init.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\init.o: ..\CMSIS\Include\core_cmInstr.h
+.\objects\init.o: ..\CMSIS\Include\core_cmFunc.h
+.\objects\init.o: ..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h

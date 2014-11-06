@@ -1,0 +1,11 @@
+--cpu Cortex-M0+
+".\objects\main.o"
+".\objects\init.o"
+"C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\LIB\ARM\RTX_CM0.lib"
+".\objects\rtx_conf_cm.o"
+".\objects\startup_stm32l053xx.o"
+".\objects\system_stm32l0xx.o"
+--strict --scatter ".\Objects\hlth.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\hlth.map" -o .\Objects\hlth.axf

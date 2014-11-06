@@ -1,0 +1,13 @@
+.\objects\main.o: ..\Src\main.c
+.\objects\main.o: ..\Inc\osObjects.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC\cmsis_os.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: ..\Inc\init.h
+.\objects\main.o: ..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h
+.\objects\main.o: ..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h
+.\objects\main.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\main.o: ..\CMSIS\Include\core_cmInstr.h
+.\objects\main.o: ..\CMSIS\Include\core_cmFunc.h
+.\objects\main.o: ..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h
+.\objects\main.o: ..\Inc\main.h
