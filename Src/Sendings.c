@@ -14,6 +14,7 @@ uint16_t CRC_value = 0;
 uint16_t Accel_to_Send = 50;
 uint16_t Gyro_to_Send = 15;
 
+uint8_t need_to_resend = 0;
 
 
 /*    АТ-комманды SIM800       */
@@ -25,13 +26,17 @@ uint8_t DEL_SMS[19] = "AT+CMGDA=\"DEL ALL\"\r";
 uint8_t APN[19] = "AT+CSTT=\"internet\"\r"; 
 uint8_t CHK_CONNECT[9] =  "AT+CIICR\r";
 uint8_t CHK_IP[9] = "AT+CIFSR\r";
-uint8_t SRV_CONNECT[42] = "AT+CIPSTART=\"TCP\",\"82.204.241.138\",\"8081\"\r";
+uint8_t SRV_CONNECT[43] = "AT+CIPSTART=\"TCP\",\"192.168.000.001\",\"8081\"\r";
 uint8_t SEND_DATA[11] = "AT+CIPSEND\r";
 uint8_t CHK_GPRS[10] = "AT+CGATT?\r";
 uint8_t GPRS_CONNECT[11] = "AT+CGATT=1\r";
 uint8_t END_LINE[1] = {0x1A};
 /*******************************/
-
+void CheckError(void)
+{
+	if(stringtoreceive[2] == 'E')
+			need_to_resend = 1;
+}
 void Init_SIM800(void)
 {
 					
@@ -54,7 +59,7 @@ void Init_SIM800(void)
 		  osDelay(1000);
 	    send_str(CHK_IP, 9);
 		  osDelay(1000);
-	    send_str(SRV_CONNECT, 42);
+	    send_str(SRV_CONNECT, 43);
 		  osDelay(3000); 
 }
 
@@ -151,8 +156,25 @@ void Send_HRM_Gyro(void)
 void Send_Server_SOS(void) 
 {	
 	  Init_SIM800();
+	  send_str(SEND_DATA, 11);
 		send_str(SOS_Buf, 9);
 	  send_str(END_LINE, 1);
+		osDelay(500);
+		CheckError();
+		while(need_to_resend && SOS_interval)
+		{
+			send_str(SEND_DATA, 11);
+			send_str(SOS_Buf, 9);
+			send_str(END_LINE, 1);
+			osDelay(1000);
+			SOS_interval--;
+			if(!SOS_interval)
+			{
+				need_to_resend = 0;
+				SOS_interval = OEM_Settings[8];
+				Send_HRM_Error(0x01);
+			}
+		}
 		
 }
 

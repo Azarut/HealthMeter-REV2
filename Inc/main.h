@@ -3,6 +3,7 @@
 #define CRC16_WIDTH (8 * sizeof(uint16_t))
 	
 extern const uint16_t crcTable[256];
+extern uint8_t SOS_interval;
 extern uint16_t crc16(const void * const message, const uint16_t nBytes) ;
 
 

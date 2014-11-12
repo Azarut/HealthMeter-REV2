@@ -165,7 +165,7 @@ void Start_Job (void const *argument)
 									Send_Server_SOS();
 								}
 								else
-									Send_HRM_Error(0x01);
+									Send_HRM_Error(0x04);
 								RX_Clear();
 			break;
 			case 0:
@@ -196,7 +196,8 @@ void GetGyro_Job (void const *argument)
 	}
 }
 
-int main (void) {
+int main (void) 
+{
   osKernelInitialize ();                    // initialize CMSIS-RTOS
   SystemCoreClockSetHSI();
 	//Configure_GPIO_LED();
@@ -206,6 +207,7 @@ int main (void) {
 	Configure_USART1();	
 	Configure_USART2();	
 	CRC_calc = crc16(SOS_arr,7);
+	SOS_interval = OEM_Settings[8];
 	tid_Start_Job = osThreadCreate (osThread(Start_Job), NULL);
 	tid_GetAccel_Job = osThreadCreate (osThread(GetAccel_Job), NULL);
 	tid_GetGyro_Job = osThreadCreate (osThread(GetGyro_Job), NULL);
