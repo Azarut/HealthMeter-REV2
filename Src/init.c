@@ -1,8 +1,12 @@
 #include "init.h"
+#include "Sendings.h"
 
 uint8_t stringtosend[] = "DMA\n";
-uint8_t stringtoreceive[255] = {0};
-uint8_t RX_Buffer[10] = {0};
+uint8_t stringtoreceive[32] = {0};
+uint8_t RX_Buffer[16] = {0};
+uint8_t TX_Buffer[904] = {0};
+
+
 void SystemCoreClockSetHSI(void) {
 
   RCC->CR |= ((uint32_t)RCC_CR_HSION);                      /* Enable HSI                        */
@@ -53,13 +57,13 @@ void Configure_GPIO_LED(void)
                | (GPIO_MODER_MODE4_0); /* (3) */  
 }
 
-void Configure_GPIO_USART1(void)
+void Configure_GPIO_USART2(void)
 {
   /* Enable the peripheral clock of GPIOA */
   RCC->IOPENR |= RCC_IOPENR_GPIOAEN;
 	
   /* GPIO configuration for USART1 signals */
-  /* (1) Select AF mode (10) on PA9 and PA10 */
+  /* (1) Select AF mode (10) on PA2 and PA3 */
   /* (2) AF4 for USART1 signals */
   GPIOA->MODER = (GPIOA->MODER & ~(GPIO_MODER_MODE2|GPIO_MODER_MODE3))\
                  | (GPIO_MODER_MODE2_1 | GPIO_MODER_MODE3_1); /* (1) */
@@ -67,13 +71,13 @@ void Configure_GPIO_USART1(void)
                   | (4 << (2 * 4)) | (4 << (3 * 4)); /* (2) */
 }
 
-void Configure_GPIO_USART2(void)
+void Configure_GPIO_USART1(void)
 {
   /* Enable the peripheral clock of GPIOA */
   RCC->IOPENR |= RCC_IOPENR_GPIOBEN;
 	
   /* GPIO configuration for USART1 signals */
-  /* (1) Select AF mode (10) on PA2 and PA3 */
+  /* (1) Select AF mode (10) on PB6 and PB7 */
   /* (2) AF4 for USART1 signals */
   GPIOB->MODER = (GPIOB->MODER & ~(GPIO_MODER_MODE6|GPIO_MODER_MODE7))\
                  | (GPIO_MODER_MODE6_1 | GPIO_MODER_MODE7_1); /* (1) */
@@ -88,7 +92,7 @@ void Configure_USART1(void)
   RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
 
   /* Configure USART1 */
-  /* (1) oversampling by 16, 9600 baud */
+  /* (1) oversampling by 16, 115200 baud */
   /* (2) Enable DMA in reception and transmission */
   /* (3) 8 data bit, 1 start bit, 1 stop bit, no parity, reception and transmission enabled */
   USART1->BRR = 320000 / 1152; /* (1) */
@@ -109,12 +113,12 @@ void Configure_USART2(void)
   RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
 
   /* Configure USART1 */
-  /* (1) oversampling by 16, 9600 baud */
+  /* (1) oversampling by 16, 115200 baud */
   /* (2) Enable DMA in reception and transmission */
   /* (3) 8 data bit, 1 start bit, 1 stop bit, no parity, reception and transmission enabled */
   USART2->BRR = 320000 / 1152; /* (1) */
-  USART2->CR3 = USART_CR3_DMAR; /* (2) */
-  USART2->CR1 = USART_CR1_RE | USART_CR1_UE; /* (3) */
+  USART2->CR3 = USART_CR3_DMAT | USART_CR3_DMAR; /* (2) */
+  USART2->CR1 = USART_CR1_TE | USART_CR1_RE | USART_CR1_UE; /* (3) */
   
   while((USART2->ISR & USART_ISR_TC) != USART_ISR_TC)/* polling idle frame Transmission */
   { 
@@ -155,11 +159,17 @@ void Configure_DMA1(void)
   DMA1_Channel3->CMAR = (uint32_t)stringtoreceive; /* (7) */
   DMA1_Channel3->CNDTR = sizeof(stringtoreceive); /* (8) */
   DMA1_Channel3->CCR = DMA_CCR_MINC | DMA_CCR_TCIE | DMA_CCR_EN; /* (9) */
+	
+	DMA1_CSELR->CSELR = (DMA1_CSELR->CSELR & ~DMA_CSELR_C4S) | (4 << (3 * 4)); /* (5) */
+  DMA1_Channel4->CPAR = (uint32_t)&(USART2->TDR); /* (6) */
+  DMA1_Channel4->CMAR = (uint32_t)TX_Buffer; /* (7) */
+  DMA1_Channel4->CNDTR = 10; /* (8) */
+  DMA1_Channel4->CCR = DMA_CCR_MINC | DMA_CCR_DIR | DMA_CCR_TCIE; /* (9) */
 
   DMA1_CSELR->CSELR = (DMA1_CSELR->CSELR & ~DMA_CSELR_C5S) | (4 << (4 * 4)); /* (5) */
   DMA1_Channel5->CPAR = (uint32_t)&(USART2->RDR); /* (6) */
   DMA1_Channel5->CMAR = (uint32_t)RX_Buffer; /* (7) */
-  DMA1_Channel5->CNDTR = 10; /* (8) */
+  DMA1_Channel5->CNDTR = 16; /* (8) */
   DMA1_Channel5->CCR = DMA_CCR_MINC | DMA_CCR_TCIE | DMA_CCR_EN; /* (9) */
 	
   /* Configure IT */
@@ -192,7 +202,11 @@ void DMA1_Channel2_3_IRQHandler(void)
 
 void DMA1_Channel4_5_6_7_IRQHandler(void)
 {
-	if((DMA1->ISR & DMA_ISR_TCIF5) == DMA_ISR_TCIF5)
+	if((DMA1->ISR & DMA_ISR_TCIF4) == DMA_ISR_TCIF4)
+  {
+    DMA1->IFCR = DMA_IFCR_CTCIF4;/* Clear TC flag */
+  }
+	else if((DMA1->ISR & DMA_ISR_TCIF5) == DMA_ISR_TCIF5)
   {
     DMA1->IFCR = DMA_IFCR_CTCIF5;/* Clear TC flag */
     DMA1_Channel5->CCR &=~ DMA_CCR_EN;

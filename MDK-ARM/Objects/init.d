@@ -7,3 +7,4 @@
 .\objects\init.o: ..\CMSIS\Include\core_cmInstr.h
 .\objects\init.o: ..\CMSIS\Include\core_cmFunc.h
 .\objects\init.o: ..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h
+.\objects\init.o: ..\Inc\Sendings.h

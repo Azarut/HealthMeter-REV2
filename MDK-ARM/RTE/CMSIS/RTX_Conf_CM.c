@@ -48,7 +48,7 @@
 //   <i> Defines max. number of user threads that will run at the same time.
 //   <i> Default: 6
 #ifndef OS_TASKCNT
- #define OS_TASKCNT     6
+ #define OS_TASKCNT     4
 #endif
  
 //   <o>Default Thread stack size [bytes] <64-4096:8><#/4>
@@ -147,7 +147,7 @@
 // ==============
 //   <i> Enables user Timers
 #ifndef OS_TIMERS
- #define OS_TIMERS      1
+ #define OS_TIMERS      0
 #endif
  
 //   <o>Timer Thread Priority
@@ -186,7 +186,7 @@
 //   <i> when they are called from the interrupt handler.
 //   <i> Default: 16 entries
 #ifndef OS_FIFOSZ
- #define OS_FIFOSZ      16
+ #define OS_FIFOSZ      8
 #endif
  
 // </h>

@@ -11,3 +11,5 @@
 .\objects\main.o: ..\CMSIS\Include\core_cmFunc.h
 .\objects\main.o: ..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h
 .\objects\main.o: ..\Inc\main.h
+.\objects\main.o: ..\Inc\Sendings.h
+.\objects\main.o: ..\Inc\AccelGyro.h

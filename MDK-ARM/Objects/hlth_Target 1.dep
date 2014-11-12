@@ -1,19 +1,21 @@
 Dependencies for Project 'hlth', Target 'Target 1': (DO NOT MODIFY !)
-F (..\Src\main.c)(0x545A3347)(-c --cpu Cortex-M0+ -D__RTX -g -O0 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HLTHMTR\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (..\Inc\osObjects.h)(0x5459D90E)
+F (..\Src\main.c)(0x54636A09)(-c --cpu Cortex-M0+ -D__RTX -g -O3 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HealthMeter-REV2\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\Inc\osObjects.h)(0x546333F4)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC\cmsis_os.h)(0x541FC566)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5419C7AA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5419C7AA)
-I (..\Inc\init.h)(0x5459FAD0)
+I (..\Inc\init.h)(0x54632B6C)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h)(0x53A1A14E)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h)(0x53A1A14E)
 I (..\CMSIS\Include\core_cm0plus.h)(0x534B864F)
 I (..\CMSIS\Include\core_cmInstr.h)(0x534B864F)
 I (..\CMSIS\Include\core_cmFunc.h)(0x534B864F)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h)(0x53A1A14E)
-I (..\Inc\main.h)(0x5459E4AF)
-F (..\Src\init.c)(0x545A3340)(-c --cpu Cortex-M0+ -D__RTX -g -O0 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HLTHMTR\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\init.o --omf_browse .\objects\init.crf --depend .\objects\init.d)
-I (..\Inc\init.h)(0x5459FAD0)
+I (..\Inc\main.h)(0x54633D24)
+I (..\Inc\Sendings.h)(0x546355BC)
+I (..\Inc\AccelGyro.h)(0x546366EA)
+F (..\Src\init.c)(0x54632B58)(-c --cpu Cortex-M0+ -D__RTX -g -O3 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HealthMeter-REV2\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\init.o --omf_browse .\objects\init.crf --depend .\objects\init.d)
+I (..\Inc\init.h)(0x54632B6C)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h)(0x53A1A14E)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h)(0x53A1A14E)
 I (..\CMSIS\Include\core_cm0plus.h)(0x534B864F)
@@ -21,14 +23,38 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5419C7AA)
 I (..\CMSIS\Include\core_cmInstr.h)(0x534B864F)
 I (..\CMSIS\Include\core_cmFunc.h)(0x534B864F)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h)(0x53A1A14E)
+I (..\Inc\Sendings.h)(0x546355BC)
+F (..\Src\Sendings.c)(0x54635BF0)(-c --cpu Cortex-M0+ -D__RTX -g -O3 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HealthMeter-REV2\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\sendings.o --omf_browse .\objects\sendings.crf --depend .\objects\sendings.d)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC\cmsis_os.h)(0x541FC566)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5419C7AA)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5419C7AA)
+I (..\Inc\Sendings.h)(0x546355BC)
+I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h)(0x53A1A14E)
+I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h)(0x53A1A14E)
+I (..\CMSIS\Include\core_cm0plus.h)(0x534B864F)
+I (..\CMSIS\Include\core_cmInstr.h)(0x534B864F)
+I (..\CMSIS\Include\core_cmFunc.h)(0x534B864F)
+I (..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h)(0x53A1A14E)
+I (..\Inc\init.h)(0x54632B6C)
+I (..\Inc\main.h)(0x54633D24)
+F (..\Src\AccelGyro.c)(0x546365A4)(-c --cpu Cortex-M0+ -D__RTX -g -O3 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HealthMeter-REV2\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\accelgyro.o --omf_browse .\objects\accelgyro.crf --depend .\objects\accelgyro.d)
+I (..\Inc\AccelGyro.h)(0x546366EA)
+I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h)(0x53A1A14E)
+I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h)(0x53A1A14E)
+I (..\CMSIS\Include\core_cm0plus.h)(0x534B864F)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5419C7AA)
+I (..\CMSIS\Include\core_cmInstr.h)(0x534B864F)
+I (..\CMSIS\Include\core_cmFunc.h)(0x534B864F)
+I (..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h)(0x53A1A14E)
+I (..\Inc\Sendings.h)(0x546355BC)
 F (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\LIB\ARM\RTX_CM0.lib)(0x541FC566)()
-F (RTE\CMSIS\RTX_Conf_CM.c)(0x5459DA5C)(-c --cpu Cortex-M0+ -D__RTX -g -O0 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HLTHMTR\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
+F (RTE\CMSIS\RTX_Conf_CM.c)(0x54633381)(-c --cpu Cortex-M0+ -D__RTX -g -O3 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HealthMeter-REV2\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC\cmsis_os.h)(0x541FC566)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5419C7AA)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5419C7AA)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC\RTX_CM_lib.h)(0x541FC566)
-F (RTE\Device\STM32L053C8\startup_stm32l053xx.s)(0x534F95E2)(--cpu Cortex-M0+ --pd "__RTX SETA 1" -g --apcs=interwork -I F:\WORK\SOURSE\SORCES\HLTHMTR\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include--pd "_RTE_ SETA 1" --pd "STM32L053xx SETA 1"--list .\listings\startup_stm32l053xx.lst --xref -o .\objects\startup_stm32l053xx.o --depend .\objects\startup_stm32l053xx.d)
-F (RTE\Device\STM32L053C8\system_stm32l0xx.c)(0x534F95E2)(-c --cpu Cortex-M0+ -D__RTX -g -O0 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HLTHMTR\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\system_stm32l0xx.o --omf_browse .\objects\system_stm32l0xx.crf --depend .\objects\system_stm32l0xx.d)
+F (RTE\Device\STM32L053C8\startup_stm32l053xx.s)(0x534F95E2)(--cpu Cortex-M0+ --pd "__RTX SETA 1" -g --apcs=interwork -I F:\WORK\SOURSE\SORCES\HealthMeter-REV2\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include--pd "_RTE_ SETA 1" --pd "STM32L053xx SETA 1"--list .\listings\startup_stm32l053xx.lst --xref -o .\objects\startup_stm32l053xx.o --depend .\objects\startup_stm32l053xx.d)
+F (RTE\Device\STM32L053C8\system_stm32l0xx.c)(0x534F95E2)(-c --cpu Cortex-M0+ -D__RTX -g -O3 --apcs=interwork -I..\CMSIS\Include -I..\CMSIS\Device\ST\STM32L0xx\Include -I..\Inc-I F:\WORK\SOURSE\SORCES\HealthMeter-REV2\MDK-ARM\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC-I C:\Keil_v5\ARM\PACK\Keil\STM32L0xx_DFP\1.1.0\Device\Include-D_RTE_ -DSTM32L053xx-o .\objects\system_stm32l0xx.o --omf_browse .\objects\system_stm32l0xx.crf --depend .\objects\system_stm32l0xx.d)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h)(0x53A1A14E)
 I (..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h)(0x53A1A14E)
 I (..\CMSIS\Include\core_cm0plus.h)(0x534B864F)

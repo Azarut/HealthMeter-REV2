@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.365,=C:\Users\rumyancev\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014.11.12 14:00:49.825,=C:\Users\rumyancev\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014.11.12 16:04:00.787,F:\WORK\SOURSE\SORCES\HealthMeter-REV2\EMUL\Unit1.dfm=C:\Users\rumyancev\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2014.11.12 16:04:00.787,F:\WORK\SOURSE\SORCES\HealthMeter-REV2\EMUL\Unit1.pas=C:\Users\rumyancev\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2014.11.12 16:04:18.805,F:\WORK\SOURSE\SORCES\HealthMeter-REV2\EMUL\EmulHRM.dproj=C:\Users\rumyancev\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

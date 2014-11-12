@@ -29,10 +29,17 @@ osThreadId tid_sample_name;                              // thread id
 osThreadDef (sample_name, osPriorityNormal, 1, 0);       // thread object
 */
 extern void Start_Job (void const *argument);          // thread function
+extern void GetAccel_Job (void const *argument);          // thread function
+extern void GetGyro_Job (void const *argument);          // thread function
 
 osThreadId tid_Start_Job;                              // thread id
-osThreadDef (Start_Job, osPriorityNormal, 1, 0);       // thread object
+osThreadDef (Start_Job, osPriorityHigh, 1, 0);       // thread object
 
+osThreadId tid_GetAccel_Job;                              // thread id
+osThreadDef (GetAccel_Job, osPriorityNormal, 1, 0);       // thread object
+
+osThreadId tid_GetGyro_Job;                              // thread id
+osThreadDef (GetGyro_Job, osPriorityNormal, 1, 0);       // thread object
 // global 'semaphores' ----------------------------------------------------------
 /* 
 Example:

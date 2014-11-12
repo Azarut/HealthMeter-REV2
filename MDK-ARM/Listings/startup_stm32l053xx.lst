@@ -412,11 +412,11 @@ ARM Macro Assembler    Page 7
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M0+ --apcs=interwork --depend=.\objec
 ts\startup_stm32l053xx.d -o.\objects\startup_stm32l053xx.o -IF:\WORK\SOURSE\SOR
-CES\HLTHMTR\MDK-ARM\RTE -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include -IC
-:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC -IC:\Keil_v5\ARM\PACK\Keil\STM
-32L0xx_DFP\1.1.0\Device\Include --predefine="__RTX SETA 1" --predefine="_RTE_ S
-ETA 1" --predefine="STM32L053xx SETA 1" --list=.\listings\startup_stm32l053xx.l
-st RTE\Device\STM32L053C8\startup_stm32l053xx.s
+CES\HealthMeter-REV2\MDK-ARM\RTE -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\In
+clude -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC -IC:\Keil_v5\ARM\PACK
+\Keil\STM32L0xx_DFP\1.1.0\Device\Include --predefine="__RTX SETA 1" --predefine
+="_RTE_ SETA 1" --predefine="STM32L053xx SETA 1" --list=.\listings\startup_stm3
+2l053xx.lst RTE\Device\STM32L053C8\startup_stm32l053xx.s
 
 
 

@@ -1,0 +1,13 @@
+.\objects\sendings.o: ..\Src\Sendings.c
+.\objects\sendings.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC\cmsis_os.h
+.\objects\sendings.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sendings.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\sendings.o: ..\Inc\Sendings.h
+.\objects\sendings.o: ..\CMSIS\Device\ST\STM32L0xx\Include\stm32l0xx.h
+.\objects\sendings.o: ..\CMSIS\Device\ST\STM32L0xx\Include\stm32l053xx.h
+.\objects\sendings.o: ..\CMSIS\Include\core_cm0plus.h
+.\objects\sendings.o: ..\CMSIS\Include\core_cmInstr.h
+.\objects\sendings.o: ..\CMSIS\Include\core_cmFunc.h
+.\objects\sendings.o: ..\CMSIS\Device\ST\STM32L0xx\Include\system_stm32l0xx.h
+.\objects\sendings.o: ..\Inc\init.h
+.\objects\sendings.o: ..\Inc\main.h
